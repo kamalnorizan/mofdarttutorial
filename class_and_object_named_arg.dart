@@ -1,9 +1,7 @@
 void main() {
-  Car mycar1 = new Car(4, 'Red', null, 180000.00, 'X70');
-  Car mycar2 = new Car(5, 'Blue', 'Sedan', 120000.00, 'Proton eMas');
+  Car mycar1 = new Car(color: 'Red', tyres: 4, price: 180000.00, model:'X70');
 
   mycar1.printCar();
-  mycar2.printCar();
 }
 
 class Car {
@@ -13,7 +11,7 @@ class Car {
   double price = 100000.00;
   String model = 'Audi';
 
-  Car(this.tyres, this.color, this.type, this.price, this.model);
+  Car({required this.tyres, required this.color, this.type, required this.price, required this.model});
 
   printCar() {
     print('Car type is: $type');
