@@ -20,28 +20,37 @@ void main() {
     'WP Putrajaya',
   ];
 
+  final name;
+  name = 'Proton Saga';
+
+  print(name);
+
   print('Nilai pi ialah $pi');
 
-  Car mycar = new Car(tyres: 4, price: 180000.00, model: 'X70', color: 'Red');
+  Car mycar = Car(tyres: 4, price: 180000.00, model: 'X70');
+  mycar.color = null;
+  // mycar.tyres = 6;
 
-  Car mycar2 = new Car(tyres: 4, price: 180000.00, model: 'X90');
+  Car mycar2 = Car(tyres: 4, price: 190000.00, model: 'X90');
+
   print('===========================');
   mycar.printCar();
   print('===========================');
   mycar2.type = 'SUV';
+  mycar2.color = 'Blue';
+  mycar2.color = 'Red';
   mycar2.printCar();
 }
 
 class Car {
   final int tyres;
-  final String? color;
+  late final String? color;
   String? type;
   final double price;
   final String model;
 
   Car({
     required this.tyres,
-    this.color = 'Black',
     this.type,
     required this.price,
     required this.model,
