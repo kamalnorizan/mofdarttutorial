@@ -7,7 +7,7 @@ void main() {
     'Doe',
     cars: [
       mycar1,
-      new Car(tyres: 5, price: 190000.00, model: 'X50'),
+      Car(tyres: 5, price: 190000.00, model: 'X50'),
     ],
   );
 
@@ -15,7 +15,7 @@ void main() {
 
   print('--- Individual Cars ---');
 
-  Person person2 = new Person('Jane', 'Smith');
+  Person person2 = new Person('Jane', 'Smith', children: [person1]);
   person2.printPerson();
 
   // mycar1.printCar();
@@ -50,8 +50,9 @@ class Person {
   String firstName;
   String lastName;
   List<Car>? cars;
+  List<Person>? children;
 
-  Person(this.firstName, this.lastName, {this.cars});
+  Person(this.firstName, this.lastName, {this.cars, this.children});
 
   printPerson() {
     print('Person name is: $firstName $lastName');
